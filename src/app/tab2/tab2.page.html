@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Email Composer
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item>
+    <ion-label color="primary" position="floating" >Email to : </ion-label>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="emailTo" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Subject : </ion-label>
+    <ion-input placeholder="Subject" [(ngModel)]="subject" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Message :  </ion-label>
+    <ion-textarea placeholder="message" [(ngModel)]="emailBody" ></ion-textarea>
+  </ion-item>
+
+<ion-button expand="block" (click) = "sendEmail()">Send email</ion-button>
+
+
+
 </ion-content>
